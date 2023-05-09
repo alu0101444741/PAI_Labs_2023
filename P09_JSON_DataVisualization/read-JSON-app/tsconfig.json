@@ -25,6 +25,7 @@
     "www/index.html",
     "www/read-json.js",
     "web-server",
-    "www/chartjs"
+    "www/chartjs",
+    "typedocconfig.ts"
   ]
 }

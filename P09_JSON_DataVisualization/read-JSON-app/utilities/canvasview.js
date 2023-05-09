@@ -37,9 +37,12 @@ export class CanvasView {
     * @desc Draw a line given two points
     * @param firstPoint
     * @param secondPoint
+    * @color
     */
-    drawLine(firstPoint, secondPoint) {
+    drawLine(firstPoint, secondPoint, color, lineWidth) {
         this.CONTEXT.beginPath();
+        this.CONTEXT.strokeStyle = (color) ? color : 'black';
+        this.CONTEXT.lineWidth = (lineWidth) ? lineWidth : 1;
         this.CONTEXT.moveTo(firstPoint.getCoordinateX(), firstPoint.getCoordinateY());
         this.CONTEXT.lineTo(secondPoint.getCoordinateX(), secondPoint.getCoordinateY());
         this.CONTEXT.stroke();

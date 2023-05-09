@@ -1,0 +1,31 @@
+{
+    "name": "PAI Lab 9",
+    "version": "1.0.0",
+    "description": "JSON. Data visualization",
+    "author": "Roberto Carrazana Pernía <alu0101444741@ull.es>",
+    "license": "ISC",
+    "private": true,
+    "main": "index.ts",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ULL-ESIT-PAI-2022-2023/2022-2023-pai-p09-json-data-visualization-alu0101444741"
+    },
+    "scripts": {
+      "push": "rm *~; git pull; git add . ; git commit -m 'Code improvement'; git push",
+      "pull": "git pull",
+      "test": "jest",
+      "lint:ci": "eslint . --ext .tsx,.ts",
+      "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+      "removejs": "rm -f src/quickhull/*.js ; rm -f src/convexhull/*.js",
+      "transpile": "tsc"
+    },
+    "devDependencies": {
+    },  
+    "dependencies": {
+      "tsconfig.json": "^1.0.11"
+    },
+    "keywords": [
+      "PAI"
+    ],
+    "type": "module"
+  }

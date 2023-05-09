@@ -17,19 +17,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { TouristsIncreaseChart } from './touristsincrease.js';
+import { TenerifeTouristsLinechart } from './tenerifetourists.js';
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const DATA = yield logJSONData();
-        //console.log(typeof DATA, DATA);
-        let populationIncreaseChart = new TouristsIncreaseChart(DATA, 0, 500000, 2010, 2019);
-        populationIncreaseChart.update();
+        const DATA = yield logJSONData(/*'../barchart/tourism2019.json'*/ 'https://datos.tenerife.es/ckan/dataset/4a803657-75ec-4e78-b123-b9f4749199cb/resource/38bbc40a-a007-4379-819d-2cef95787f7e/download/turistasalojadossantacruz.json');
+        let tenerifeTourists = new TenerifeTouristsLinechart(DATA, 0, 12000, 2009, 2019, 'Tourists visiting Tenerife (2010-2019)');
+        tenerifeTourists.update();
     });
 }
 main();
-function logJSONData() {
+function fetchPopulationData() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch('../barchart/tourism2019.json');
+        const RESPONSE = yield fetch('/data');
+        const json = yield RESPONSE.json();
+        return json;
+    });
+}
+function logJSONData(path) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(path);
         const jsonData = yield response.json();
         return (jsonData['DATOS']);
     });

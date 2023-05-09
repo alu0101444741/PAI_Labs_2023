@@ -70,7 +70,7 @@ export class Line2D {
     }
     /**
     * @desc Método para obtener una cadena con la información de la recta
-    * @return {String} cadena en formato: {puntoIncial, puntoFinal}
+    * @return cadena en formato: puntoIncial, puntoFinal
     */
     toString() {
         return (`Start:${this.startPoint.toString()},\n End:${this.endPoint.toString()},\n`);

@@ -9,7 +9,7 @@
  * @desc TouristsIncreaseChart class
  */
 import { BarChart } from "./barchart.js";
-/** @desc TouristsIncreaseChart class. Extends BarChart class */
+/** @desc TouristsIncreaseChart class. Extends BarChart class.  */
 export class TouristsIncreaseChart extends BarChart {
     /**
      * @desc Create a new TouristsIncreaseChart object

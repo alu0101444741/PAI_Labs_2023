@@ -13,28 +13,14 @@
 import { TouristsIncreaseChart } from './touristsincrease.js';
 
 async function main(): Promise<void> {  
-  const DATA: object[] = await logJSONData(); // await fetchPopulationData();
-  //console.log(typeof DATA, DATA);
+  const DATA: object[] = await logJSONData();
   let populationIncreaseChart: TouristsIncreaseChart = new TouristsIncreaseChart(DATA, 0, 500000, 2010, 2019);
   populationIncreaseChart.update();
 }
 main();
 
-interface PopulationData {
-  Year: number;
-  Age: string;
-  Male: number;
-  Female: number;
-}
-
-async function fetchPopulationData(): Promise<PopulationData[]> {
-  const RESPONSE = await fetch('/data');
-  const json = await RESPONSE.json();
-  return json;
-}
-
 async function logJSONData(): Promise<object[]> {
-  const response = await fetch('./barchart/tourism2019.json');
+  const response = await fetch('../barchart/tourism2019.json');
   const jsonData = await response.json();
   return(jsonData['DATOS']);
 }

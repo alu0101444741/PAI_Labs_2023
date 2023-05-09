@@ -5,46 +5,49 @@
  * Programación de Aplicaciones Interactivas
  *
  * @author Roberto Carrazana Pernía
- * @since Apr 08 2023
- * @desc BarChart class
+ * @since Apr 12 2023
+ * @desc LineChart class
  */
 import { CanvasView } from "../utilities/canvasview.js";
 import { Point2D } from "../utilities/point2d.js";
-/** @desc BarChart class */
-export class BarChart extends CanvasView {
+/** @desc LineChart class */
+export class LineChart extends CanvasView {
     /**
-     * @desc BarChart constructor
+     * @desc LineChart constructor
      * @param DATA - data as an object
      * @param minimumYValue
      * @param maximumYValue
+     * @param title
      */
-    constructor(DATA, minimumYValue, maximumYValue) {
+    constructor(DATA, minimumYValue, maximumYValue, title) {
         super();
         this.DATA = DATA;
         this.minimumYValue = minimumYValue;
         this.maximumYValue = maximumYValue;
+        this.title = title;
         this.axisYValues = [];
         this.axisXValues = [];
-    }
-    /** @desc Draw method for the bar chart */
-    update() {
-        this.drawBars();
-        this.drawTags();
-        this.drawAxis();
-        this.drawTitle('Tourists visiting Tenerife (2010-2019)');
+        this.points = [];
+        this.axisYColors = ['Aqua', 'Aquamarine', 'Blue', 'Chocolate', 'Beige', 'Azure',
+            'Brown', 'CadetBlue', 'BlueViolet', 'Cyan', 'Crimson', 'Coral',
+            'DarkRed', 'DarkMagenta', 'DarkSalmon', 'DeepPink', 'ForestGreen', 'Gold',
+            'Fuchsia', 'Green', 'Ivory', 'Khaki'];
     }
     /** @desc Draw the chart bars */
-    drawBars() {
+    drawLines() {
         let normalizedValues = this.normalizeValues();
         let widthSlotSize = (this.WIDTH - this.BORDER_SPACE * 2) / this.axisXValues.length;
-        let barWidth = widthSlotSize / 2;
-        let gradient = this.CONTEXT.createLinearGradient(0, 0, 0, 800);
-        gradient.addColorStop(0, "cyan");
-        gradient.addColorStop(1, "blue");
-        for (let width = this.BORDER_SPACE + widthSlotSize / 2, i = 0; width < this.WIDTH - this.BORDER_SPACE, i < this.axisXValues.length; width += widthSlotSize, ++i) {
-            this.CONTEXT.fillStyle = gradient;
-            this.CONTEXT.fillRect(width - barWidth / 2, this.HEIGHT - this.BORDER_SPACE, barWidth, -normalizedValues[i]);
-            this.drawText(new Point2D(width, this.HEIGHT - this.BORDER_SPACE - normalizedValues[i] - 10), this.axisYValues[i].toString(), 15, 'black');
+        for (let index = 0; index < this.points.length; ++index) {
+            //console.log('Line', index);
+            for (let width = this.BORDER_SPACE /* + widthSlotSize / 2*/, i = 1; width < this.WIDTH - this.BORDER_SPACE, i < this.axisXValues.length; width += widthSlotSize, ++i) {
+                //this.CONTEXT.fillStyle = lineColor;  
+                // this.CONTEXT.fillRect(width - barWidth / 2, this.HEIGHT - this.BORDER_SPACE, barWidth, -normalizedValues[i]);
+                //console.log('\tDrawing point', this.points[index][i - 1].toString());
+                this.drawPoint(this.points[index][i - 1], this.axisYColors[index]);
+                //console.log('Current year', this.axisXValues[i], 'value:', this.axisYValues[i]);
+                this.drawLine(this.points[index][i - 1], this.points[index][i], this.axisYColors[index], 2);
+                // this.drawText(this.points[index][i].subtract(new Point2D(0, 10)), this.axisYValues[i].toString(), 15, 'black');
+            }
         }
     }
     /** @desc Draw chart axis. */
@@ -85,16 +88,26 @@ export class BarChart extends CanvasView {
         if ((this.maximumYValue === 0) && (this.minimumYValue === 0)) {
             maximum = -Infinity;
             minimum = Infinity;
-            for (const value of this.axisYValues) {
-                if (value > maximum)
-                    maximum = value;
-                if (value < minimum)
-                    minimum = value;
+            for (let index = 0; index < this.axisYValues.length; ++index) {
+                for (const value of this.axisYValues[index]) {
+                    if (value > maximum)
+                        maximum = value;
+                    if (value < minimum)
+                        minimum = value;
+                }
             }
             minimum - (maximum - minimum);
         }
-        for (const value of this.axisYValues)
-            normalizedValues.push(((value - minimum) / (maximum - minimum)) * (this.HEIGHT - this.BORDER_SPACE * 2));
+        let widthSlotSize = (this.WIDTH - this.BORDER_SPACE * 2) / this.axisXValues.length;
+        for (let index = 0; index < this.points.length; ++index) {
+            let currentX = this.BORDER_SPACE + widthSlotSize / 2;
+            for (const value of this.axisYValues[index]) {
+                let currentY = ((value - minimum) / (maximum - minimum)) * (this.HEIGHT - this.BORDER_SPACE * 2);
+                normalizedValues.push(currentY);
+                this.points[index].push(new Point2D(currentX, this.HEIGHT - this.BORDER_SPACE - currentY));
+                currentX += widthSlotSize;
+            }
+        }
         return (normalizedValues);
     }
 }
