@@ -1,0 +1,21 @@
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+
+p {
+  text-indent: 60px;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px;
+}
+  
+body {  
+  text-align: center;
+  background-color: azure;
+}

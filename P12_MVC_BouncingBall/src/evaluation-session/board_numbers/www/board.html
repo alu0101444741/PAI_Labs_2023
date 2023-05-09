@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="board.css"/>
+  <title>Board numbers Puzzle</title>
+  <script type="module" src="../../../../srcJS/evaluation-session/board_numbers/model/boardnumbersclient.js"></script>
+</head>
+<body>
+  <div id="mainScene">  
+    <h1 id="header"> Board numbers Puzzle </h1>
+    <canvas id="mainCanvas" width="800" height="800"></canvas>  
+    <div id="Menu">
+      
+      <a id="back" href= "../../../../www/index.html"> Back to index </a>
+
+      <div id="gameControls">              
+        <button id="reset" class = "button"> Reset </button>  
+        <button id="solve" class = "button"> Solve </button>
+      </div>
+
+
+      <div id="inputDigit">
+        <label id="inputLabel"> Special number </label>  
+        <input id="inputValue" value="0" type="number"/>
+        <button id="resetSpecial" class = "button"> Reset-special </button>        
+      </div>
+     
+       
+
+    </div> 
+  </div>
+</body>
+</html>

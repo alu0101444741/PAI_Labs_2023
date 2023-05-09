@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="poker.css"/>
+  <title>Poker Game</title>
+  <script type="module" src="../srcJS/poker/model/pokerclient.js"></script>
+</head>
+<body>
+  <a href= "./index.html"> Back to index </a><br>
+  <div id="pokerScene">  
+    <canvas id="mainCanvas" width="1080" height="900"></canvas><br>   
+
+    <div id="gameControls">
+      <button id="PokerHand" class="buttons"> Poker Hand </button>
+      <button id="Trips" class="buttons"> Trips </button>
+      <button id="Play" class="buttons"> Play </button>
+        <div id="playerOneButtons">
+          <button id="DealHandOne" class="buttons"> Deal hand 1 </button>
+          <button id="ChangeHandOne" class="buttons"> Change hand 1 </button>
+        </div>
+        <div id="winnerTag">
+          <label id="winnerLabel"> Winner : </label>
+          <label id="winner"> None </label>
+        </div>
+        <div id="playerTwoButtons">
+          <button id="DealHandTwo" class="buttons"> Deal hand 2 </button>        
+          <button id="ChangeHandTwo" class="buttons"> Change hand 2 </button>
+        </div>        
+    </div>
+
+  </div>
+</body>
+</html>

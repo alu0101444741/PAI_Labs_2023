@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "allowJs": true,
+    "rootDir": "./",
+    "outDir": "./dist",
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,                    /* will issue an error whenever it would have inferred any:*/     
+    "forceConsistentCasingInFileNames": true,
+    
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "nodules_modules/*"
+      ]
+    }
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["./src/**/*"],
+  //"exclude": ["node_modules"]
+  /*, 
+  "exclude": [
+    "node_modules",
+    "build",
+    "lib",
+    "test",
+    "public"
+  ]*/
+}
+

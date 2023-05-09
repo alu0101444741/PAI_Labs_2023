@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="halma.css"/>
+  <title>Halma</title>
+  <script type="module" src="../srcJS/halma/model/halmaclient.js"></script>
+</head>
+<body>
+  <div id="mainScene">
+    <div id="canvasTop">
+      <a id="back" href= "./index.html"> Back to index </a>
+      <p id="movements"> Movements: 0 </p>
+      <p id="gameState"> Playing... </p>
+      <div id="inputDigit">
+        <label id="inputLabel"> Pieces </label>  
+        <input id="inputValue" value="9" type="number"/>
+        <button id="reset" class = "button"> Reset </button>        
+      </div>
+    </div>    
+    <canvas id="mainCanvas" width="850" height="850"></canvas>
+  </div>
+</body>
+</html>

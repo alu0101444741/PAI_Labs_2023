@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="ball_mod.css"/>
+  <title>Moving Ball</title>
+  <script type="module" src="../../../../srcJS/evaluation-session/movingball_modified/model/movingobjectclient.js"></script>
+</head>
+<body>
+  <div id="mainScene">  
+    <div id="canvasContainer">
+      <canvas id="mainCanvas" width="1080" height="400"></canvas>
+    </div>
+      
+    <div id="Menu">
+      
+      <a id="back" href= "../../../../www/index.html"> Back to index </a>
+
+      <div id="gameControlsLeft">              
+        <button id="UpLeft" class = "button buttonLeft"> Up </button>
+        <div id="middleButtonsLeft">
+          <button id="LeftLeft" class = "button buttonLeft"> Left </button>
+          <button id="RightLeft" class = "button buttonLeft"> Right </button>
+        </div>    
+        <button id="DownLeft" class = "button buttonLeft"> Down </button>
+      </div>
+      <div id="gameControlsRight">              
+        <button id="UpRight" class = "button buttonRight"> Up </button>
+        <div id="middleButtonsLeft">
+          <button id="LeftRight" class = "button buttonRight"> Left </button>
+          <button id="RightRight" class = "button buttonRight"> Right </button>
+        </div>    
+        <button id="DownRight" class = "button buttonRight"> Down </button>
+      </div>
+      <div id="inputPixels">
+        <label id="inputLabel"> Speed (Pixels) </label> 
+        <input id="inputValue" value="10" type="number"/>
+      </div>
+
+    </div> 
+  </div>
+</body>
+</html>

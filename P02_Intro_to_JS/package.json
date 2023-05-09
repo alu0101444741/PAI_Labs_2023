@@ -1,0 +1,10 @@
+{
+  "name": "Introduction to JavaScript",
+  "version": "1.0.0",
+  "description": "Simple programs in JS",
+  "author": "F. de Samde",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "1.4.9"
+  }
+}

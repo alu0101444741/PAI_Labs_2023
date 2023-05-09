@@ -1,0 +1,30 @@
+{
+  "display": "Configuration for Graphics Programming in PAI",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "es2015",
+    "module": "es2015",
+    "rootDir": "./",
+    "moduleResolution": "node",
+    "outDir": "./",
+    "declaration": false,                     /* Generate (or not) .d.ts files for every TypeScript file inside your project */
+    "alwaysStrict": true,                     /* Parse in strict mode and emit "use strict" for each source file. */
+    "strict": true,                           /* Enable all strict type-checking options. */
+    "lib": ["ESNext", "dom"],                 /* Allows you to use the newest syntax, and have access to console.log */
+    "noImplicitAny": true,                    /* will issue an error whenever it would have inferred any:*/ 
+    "noFallthroughCasesInSwitch": true,       /* Report errors for fallthrough cases in switch statement. */
+    "noImplicitReturns": true,                /* Report error when not all code paths in function return a value. */
+    "forceConsistentCasingInFileNames": true  /* Force all file names to have the same case style. */    
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "lib",
+    "test",
+    "public",
+    "www/index.html",
+    "www/read-json.js",
+    "web-server",
+    "www/chartjs"
+  ]
+}

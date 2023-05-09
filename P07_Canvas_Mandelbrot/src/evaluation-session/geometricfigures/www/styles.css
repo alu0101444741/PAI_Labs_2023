@@ -1,0 +1,23 @@
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+#mainCanvas {
+  border: 5px solid red;
+}
+
+p {
+  text-indent: 60px;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {  
+  text-align: center;
+  background-color: azure;
+}

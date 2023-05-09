@@ -1,0 +1,76 @@
+
+#pokerScene {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+#gameControls {  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+#PokerHand {
+  display: flex;
+  height: 60px;
+}
+
+#playerOneButtons, #playerTwoButtons {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#winnerTag {
+  display: flex;
+  flex-direction: row;
+}
+
+body {  
+  background-color: azure;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#mainCanvas {
+  border:3px solid black;
+}
+
+.buttons {
+  font-size: 25px;
+}
+
+.buttons:hover {
+  color: 'blue';
+  transition: 0.9s;
+}
+
+#Refresh {
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+}
+
+#winnerLabel, #winner {
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+#back {
+  text-align: left;
+  text-indent: 30px;
+  background-color: azure;
+}

@@ -1,0 +1,90 @@
+
+#mainScene {
+  margin-top: 0%;
+  padding-top: 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+#mainCanvas {
+  align-self: center;
+  border:3px solid black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#canvasTop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#movements, #gameState {  
+  margin-top: 0%;
+  padding-top: 0%;
+  margin-bottom: 0%;
+  padding-bottom: 1%;
+  font-size: 40px;
+  display: flex;
+  flex: 1;
+}
+
+#gameState {
+  justify-content: left;  
+  flex-grow: 0.75;
+}
+
+#movements {
+  display: flex;
+  flex: 1;  
+  justify-content: center;
+}
+
+#inputDigit {
+  margin-top: 0%;
+  padding-top: 0%;
+  font-size: 40px;
+  justify-self: center;
+  display: flex;
+  flex: 1;
+  flex-grow: 1.2;
+}
+
+#inputValue {    
+  font-size: 30px;
+  text-align: center;
+  width: 20%;
+  height: 20%;
+  margin-left: 5%;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  
+}
+
+#reset {
+  font-size: 30px;
+  justify-content: center;
+  margin-left: 5%;
+  width: 20%;
+  display: flex;
+  align-self: center;
+}
+
+#back {
+  border: 1px solid gray;
+  margin-top: 0%;
+  padding-top: 0%;  
+  text-decoration: none;
+  font-size: 30px;
+  display: flex;
+  flex: 1;
+  flex-grow: 0.5;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+body {  
+  background-color: lightgray;
+}

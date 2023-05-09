@@ -1,0 +1,32 @@
+#pageTop {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1 {
+  justify-self: center;
+  text-align: center;
+  display: flex;
+  flex: 1.5;
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px;
+  display: flex;
+  flex: 1;
+  justify-self: left;
+}
+  
+body { 
+  margin-top: 0%;
+  padding-top: 0%; 
+  text-align: center;
+  background-color: azure;
+}
+
+img {
+  border: 2px solid green;
+}

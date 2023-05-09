@@ -1,0 +1,41 @@
+{
+  "display": "Configuration for Graphics Programming in PAI",  
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es2015",
+    "module": "es2015",
+    "allowJs": true,
+    "rootDir": "./src",
+    "outDir": "./srcJS",
+    "declaration": false,
+    "alwaysStrict": true,                     /* Parse in strict mode and emit "use strict" for each source file */
+    "strict": true,                           /* Enable all strict type-checking options */
+    //"lib": ["ESNext", "dom"],                 /* Allows you to use the newest syntax, and have access to console.log */
+    "esModuleInterop": true,
+    "noImplicitAny": true,                    /* will issue an error whenever it would have inferred any:*/ 
+    "noFallthroughCasesInSwitch": true,       /* Report errors for fallthrough cases in switch statement */
+    "noImplicitReturns": true,                /* Report error when not all code paths in function return a value */
+    "noUnusedLocals": false,                   /* Report errors on unused local variables */
+    "forceConsistentCasingInFileNames": true,  /* Force all file names to have the same case style */
+    "downlevelIteration": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [    
+    "build",
+    "lib",
+    "test",
+    "public",
+    "www",
+    "./srcJS",
+    "docs",
+    "typedocconfig.ts",
+    "./src/pokertests/**/*",
+    "babel.config.cjs",
+    "jest.config.cjs",
+    "./node_modules",
+    "./node_modules/@types/yargs/index.d.ts",
+    "./node_modules/@types/node/ts4.8/test.d.ts",
+    "./node_modules/@types/babel__traverse/index.d.ts"
+  ],
+}
